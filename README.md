@@ -8,6 +8,7 @@ https://vertex-ai-flask-754004678844.us-central1.run.app/chat
 This project is a lightweight LLM demo server built with Python Flask and deployed on Google Cloud Run.
 It provides both a web-based chat interface and a JSON API for running Google Vertex AI Gemini models.
 Users can dynamically select which Gemini model to use before submitting a prompt.
+
 ---
 
 1. Overview
@@ -102,12 +103,19 @@ Useful for demo and manual testing
 
 POST /ask
 
+```json
+
 Example request:
 
 {
   "prompt": "Explain vector embeddings.",
   "model": "gemini-2.5-pro"
 }
+{
+  "prompt": "Explain vector embeddings.",
+  "model": "gemini-2.5-pro"
+}
+
 
 
 Example response:
@@ -117,17 +125,19 @@ Example response:
   "prompt": "Explain vector embeddings.",
   "answer": "..."
 }
-
+```
 ---
 
 6. Project Structure
+
+```
 Vertex_AI/
  ├── app.py                # Flask app + Gemini integration
  ├── Dockerfile            # Cloud Run container definition
  ├── requirements.txt      # Python dependencies
  └── templates/
        └── chat.html       # UI template (model selector + chat)
-
+```
 ---
 
 7. Core Logic Example
